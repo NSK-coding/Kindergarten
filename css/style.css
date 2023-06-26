@@ -2,6 +2,7 @@
 
 html {
   font-size: 62.5%;
+  scroll-behavior: smooth;
 }
 body {
   background-color: #a5e4cd;
@@ -35,8 +36,9 @@ li {
   line-height: 1px;
 }
 .section-title {
-  font-size: 4.8rem;
-  /* font-size: calc(2.4rem + ((1vw - 0.48rem) * 0.5556)); */
+
+  font-size: calc(3.6rem + ((1vw - 0.769rem) * 2.0101));
+    min-height: 0vw;
   min-height: 0vw;/* Safari用バグフィックス */
   line-height: 1.3;
   font-weight: bold;
@@ -62,8 +64,7 @@ li {
 }
 
 .button a:hover{
-  background-color: white;
-  color: #e9654b;
+
 }
 .icon {
   width: 32px;
@@ -71,14 +72,30 @@ li {
   filter: invert(100%) sepia(0%) saturate(28%) hue-rotate(47deg) brightness(107%) contrast(106%);
 
 }
-.button a:hover .icon {
+.button-anime:hover .icon {
   filter: invert(60%) sepia(33%) saturate(5833%) hue-rotate(331deg) brightness(96%) contrast(90%);
 }
 
+.button-anime:hover {
+  background-color: white;
+  color: #e9654b;
+  animation: bounce 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+@keyframes bounce {
+  from {
+    transform: scale(1.1);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+
 a.anchor {
   display: block;
-  padding-top: 70px;
-  margin-top: -70px;
+  padding-top: 170px;
+  margin-top: -170px;
 }
 
 
@@ -114,6 +131,10 @@ a.anchor {
   animation: rotate-z 2s infinite;
   -webkit-animation: rotate-z 4s infinite;
 }
+.rotate:hover {
+  animation-play-state: paused;
+}
+
 
 svg {
   width: 100%;
@@ -121,9 +142,7 @@ svg {
   /* display: none; */
 }
 
-.cls-1:hover {
-  fill: red;
-}
+
 
 header {
   /* height: 217px; */
@@ -473,7 +492,7 @@ width: 12%;
 }
 
 .nyuen-content {
-  padding: 61px 7% 27px;
+  padding: 61px 7% 17px;
   margin-bottom: 4px;
   background-color: #1c6eb8;
   top: 0;
@@ -491,7 +510,7 @@ width: 12%;
 }
 .nyuen-desc_1 {
   position: absolute;
-  top: 153px;
+  top: 148px;
   left: 7%;
   right: 6%;
   z-index: 10;
@@ -502,16 +521,25 @@ width: 12%;
 }
 .nyuen-vec {
   position: absolute;
-  top: -30px;
-  left: 2px;
+  width: 227px;
+  height: auto;
+  top: -36px;
+  left: 3px;
   z-index: 1;
   /* display: none; */
+}
+.nyuen-wolf {
+  position: absolute;
+  width: 14%;
+  top: -4px;
+  left: 22px;
+
 }
 .nyuen-schedule {
   max-width: 796px;
   /* width: 85%; */
   height: auto;
-  margin: 171px auto 0;
+  margin: 165px auto 0;
 }
 .nyuen-time_flex {
   display: flex;
@@ -549,7 +577,7 @@ width: 12%;
   padding: 5px 0;
 }
 .telephone {
-  margin-top: 14px;
+  margin-top: 28px;
   margin-right: 0px;
   padding: 5px 0;
 }
@@ -616,6 +644,7 @@ height: 100px;
 }
 
 #access {
+  margin-top: 3px;
   padding-bottom: 16%;
 }
 
@@ -629,18 +658,22 @@ height: 100px;
 }
 .access-title {
   position: absolute;
-  top: 1px;
+  top: 6px;
   left: 5%;
   z-index: 10;
   color: white;
 }
 .access-vec {
   position: absolute;
-  top: -70px;
+  width: 250px;
+  height: auto;
+  top: -67px;
   left: -9px;
   z-index: 1;
   /* display: none; */
 }
+
+
 .access-flex {
   margin-top: 158px;
   /* display: flex; */
@@ -665,6 +698,7 @@ grid-row: 1 / 3;
   /* width: 100%; */
   grid-column: 2 / 3;
 grid-row: 2 / 3;
+padding-left: 13px;
 padding-bottom: 24px;
 }
 /* .access-grid_2 {
@@ -706,9 +740,10 @@ height: 75%;
   height: 108px;
   margin-top: 10px;
   margin-bottom: 20px;
+  padding-left: 3px;
 }
 .access-desc {
-  margin-left: 6px;
+  margin-left: 12px;
 }
 
 .access-station {
@@ -719,7 +754,7 @@ height: 75%;
 .access-caution {
   color: #e9654b;
   font-size: 2rem;
-  margin: 22px 0 0 10px;
+  margin: 22px 0 0 0px;
 }
 .access-parking {
   margin-top: 11px;
@@ -761,6 +796,154 @@ footer {
   height: 70px;
   background-color: #1c6eb8;
 }
+
+
+
+
+/* fadeUp */
+
+.fadeUp{
+  animation-name:fadeUpAnime;
+  animation-duration:0.8s;
+  animation-fill-mode:forwards;
+  opacity:0;
+  }
+  
+  @keyframes fadeUpAnime{
+    from {
+      opacity: 0;
+    transform: translateY(150px);
+    }
+  
+    to {
+      opacity: 1;
+    transform: translateY(0);
+    }
+  }
+  
+  
+  /* スクロールをしたら出現する要素にはじめに透過0を指定　*/
+   
+  .fadeUpTrigger{
+      opacity: 0;
+  }
+
+
+
+  .container {
+    position: relative;
+    width: 100%;
+    height: 50vh;
+    overflow: hidden;
+  }
+  .squirrel {
+    position: absolute;
+    z-index: 50;
+    width: 7%;
+    right: -15%; /* 初期位置（画面外） */
+    top: 50%;
+  }
+
+  .rabbit,
+  .fox {
+    position: absolute;
+    z-index: 50;
+    width: 10%;
+    right: -20%; /* 初期位置（画面外） */
+    top: 50%;
+  }
+  .deer {
+    position: absolute;
+    z-index: 50;
+    width: 15%;
+    right: -30%; /* 初期位置（画面外） */
+    top: 20%;
+  }
+
+
+  .march {
+    animation: marchAnime3 50s linear infinite, yurayura 1s linear infinite;
+  }
+  .march2 {
+    animation: marchAnime 50s linear infinite, yurayura 1s linear infinite;
+    animation-delay: 5s;
+  }
+  .march3 {
+    animation: marchAnime 50s linear infinite, yurayura 1s linear infinite;
+    animation-delay: 10s;
+  }
+  .march4 {
+    animation: marchAnime2 50s linear infinite, yurayura 1s linear infinite;
+    animation-delay: 17s;
+  }
+
+
+  @keyframes marchAnime {
+    0% {
+      right: -15%; /* 初期位置（画面外） */
+      top: 50%;
+    }
+    25% {
+      right: 25%; /* X軸方向の移動（中央へ） */
+      top: 30%; /* Y軸方向の移動（下方向へ） */
+    }
+    50% {
+      right: 50%; /* X軸方向の移動（中央へ） */
+      top: 20%; /* Y軸方向の移動（下方向へ） */
+    }
+    75% {
+      right: 75%; /* X軸方向の移動（中央へ） */
+      top: 30%; /* Y軸方向の移動（下方向へ） */
+    }
+    100% {
+      right: 115%; /* 画面外への移動 */
+      top: 50%;
+    }
+  }
+  @keyframes marchAnime2 {
+    0% {
+      right: -20%; /* 初期位置（画面外） */
+      top: 40%;
+    }
+    25% {
+      right: 25%; /* X軸方向の移動（中央へ） */
+      top: 20%; /* Y軸方向の移動（下方向へ） */
+    }
+    50% {
+      right: 50%; /* X軸方向の移動（中央へ） */
+      top: 10%; /* Y軸方向の移動（下方向へ） */
+    }
+    75% {
+      right: 75%; /* X軸方向の移動（中央へ） */
+      top: 20%; /* Y軸方向の移動（下方向へ） */
+    }
+    100% {
+      right: 120%; /* 画面外への移動 */
+      top: 40%;
+    }
+  }
+  @keyframes marchAnime3 {
+    0% {
+      right: -10%; /* 初期位置（画面外） */
+      top: 60%;
+    }
+    25% {
+      right: 25%; /* X軸方向の移動（中央へ） */
+      top: 40%; /* Y軸方向の移動（下方向へ） */
+    }
+    50% {
+      right: 50%; /* X軸方向の移動（中央へ） */
+      top: 30%; /* Y軸方向の移動（下方向へ） */
+    }
+    75% {
+      right: 75%; /* X軸方向の移動（中央へ） */
+      top: 40%; /* Y軸方向の移動（下方向へ） */
+    }
+    100% {
+      right: 110%; /* 画面外への移動 */
+      top: 60%;
+    }
+  }
   /*-------------------------------------------
 Common
 -------------------------------------------*/
@@ -768,6 +951,9 @@ Common
 @media screen and (min-width: 1366px) {
   .c-text {
     font-size: 1.6rem;
+  }
+  .section-title {
+    font-size: 4.8rem;
   }
   .c-title_h3 {
     font-size: 3.2rem;
@@ -821,7 +1007,8 @@ Tablet
     font-size: 1.4rem;
   }
   .section-title {
-    font-size: 3.8rem;
+    font-size: calc(1.6rem + ((1vw - 0.375rem) * 5.0761));
+    min-height: 0vw;
   }
   .c-title_h3 {
     font-size: calc(1.8rem + ((1vw - 0.375rem) * 3.5533));
@@ -878,18 +1065,15 @@ min-height: 0vw;
   }
 
 .encho-content {
-  padding: 52px 0 0;
+  padding: 5% 0 0;
   height: min(978px, calc(758px + (769px - 100vw) * 1 ));
 }
 .encho-title{
   left: 0;
 }
-.encho-message {
-  top: 142px;
-  left: 0;
-}
+
 .encho-absolute {
-  top: 139px;
+  top: 22vw;
   left: 0;
 }
 .encho-message_2 {
@@ -912,14 +1096,14 @@ min-height: 0vw;
 display: none;
 }
 .nyuen-title {
-  top: 40px;
+  top: 5%;
   left: 0;
 }
 #nyuen {
   padding-bottom: 13%;
 }
 .nyuen-desc_1 {
-  top: 131px;
+  top: 17%;
   left: 20px;
   right: 20px;
 }
@@ -927,7 +1111,7 @@ display: none;
   font-size: 1.6rem;
 }
 .nyuen-content {
-  padding: 61px 20px 69px;
+  padding: 9% 20px 69px;
   margin-bottom: 0px;
   padding-bottom: calc(69px + (769px - 100vw) * 0.1);
 }
@@ -963,8 +1147,14 @@ display: none;
   height: 46px;
 }
 .nyuen-vec {
+  top: -3%;
   left: -1%;
   width: 29%;
+}
+.nyuen-wolf {
+  top: 0%;
+  left: 3%;
+  width: 18%;
 }
 .nyuen-tree {
   left: 5%;
@@ -980,7 +1170,7 @@ display: none;
   left: 1%;
 }
 .access-vec {
-  top: -65px;
+  top: -9vw;
   left: -5%;
   width: 31%;
 }
@@ -1047,6 +1237,13 @@ line-height: 1.9;
 .footer-box {
   height: 30px;
 }
+
+.container {
+  height: 30vh;
+}
+
+
+
 }
 
 
@@ -1105,6 +1302,7 @@ padding-left: 8px;
   width: 23%;
 }
 #nyuen {
+  padding-top: 6%;
   padding-bottom: 12%;
 }
 
@@ -1116,6 +1314,11 @@ padding-left: 8px;
   width: 21%;
   top: -2%;
   left: 0%;
+}
+.nyuen-wolf {
+  width: 14%;
+  top: -1%;
+  left: 1%;
 }
 .nyuen-desc_1 {
   top: 52px;
@@ -1201,7 +1404,7 @@ padding-left: 8px;
 }
 .access-content {
   border: 2px solid #1c6eb8;
-  padding-bottom: 123px;
+  padding-bottom: 42px;
   margin-bottom: 11px;
 }
 .access-grid {
@@ -1340,6 +1543,10 @@ text-align: center;
 .footer-img {
   bottom: calc((375px - 100vw) * 0.3);
 }
+.container {
+  height: 25vh;
+}
+
 header {
   position: static;
 }

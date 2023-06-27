@@ -1,3 +1,5 @@
+
+//  sp版NAVアイコンを押したときのハンバーガーメニュー
 $(".openbtn").click(function () {//ボタンがクリックされたら
 	$(this).toggleClass('active');//ボタン自身に activeクラスを付与し
     $("#g-nav").toggleClass('panelactive');//ナビゲーションにpanelactiveクラスを付与
@@ -9,21 +11,21 @@ $("#g-nav a").click(function () {//ナビゲーションのリンクがクリッ
 });
 
 
+
+//  指定されたPath領域内をホバーすると、クラスを付与する
 $(function(){
   $('.menu-1').hover(function(){
-    // $('.icon-01').addClass('hovered');
     $('.hover-01').addClass('activated');
   }, function(){
-    // $('.icon-01').removeClass('hovered')
     $('.hover-01').removeClass('activated')
   });
 });
 
 $(function(){
   $('.icon-02').hover(function(){
-    $('.icon-02').addClass('hovered2');
+    $('.icon-02').addClass('hovered');
   }, function(){
-    $('.icon-02').removeClass('hovered2')
+    $('.icon-02').removeClass('hovered')
   });
 });
 
@@ -39,32 +41,32 @@ $(function(){
 
 $(function(){
   $('.icon-05').hover(function(){
-    $('.icon-05').addClass('hovered2');
+    $('.icon-05').addClass('hovered');
   }, function(){
-    $('.icon-05').removeClass('hovered2')
+    $('.icon-05').removeClass('hovered')
   });
 });
 
-
+//  アニメーショントリガー
 // 動きのきっかけとなるアニメーションの名前を定義
 function fadeAnime(){
 
   //ふわっと動くきっかけのクラス名と動きのクラス名の設定
-  $('.fadeUpTrigger').each(function(){ //fadeInUpTriggerというクラス名が
-    var elemPos = $(this).offset().top+150; //要素より、150px上の
+  $('.fadeUpTrigger').each(function(){ //fadeUpTriggerというクラス名が
+    var elemPos = $(this).offset().top+150; //要素より、150px下の
     var scroll = $(window).scrollTop();
     var windowHeight = $(window).height();
     if (scroll >= elemPos - windowHeight){
     $(this).addClass('fadeUp');
-    // 画面内に入ったらfadeInというクラス名を追記
-    }else{
-      $(this).removeClass('fadeUp');
-    // 画面外に出たらfadeInというクラス名を外す
+    // 画面内に入ったらfadeUpというクラス名を追記
+    // }else{
+    //   $(this).removeClass('fadeUp');
+    // 画面外に出たらfadeUpというクラス名を外す
     }
     });
 
-  $('.marchTrigger').each(function(){ //fadeInUpTriggerというクラス名が
-    var elemPos = $(this).offset().top-350; //要素より、150px上の
+  $('.marchTrigger').each(function(){ //marchTriggerというクラス名が
+    var elemPos = $(this).offset().top-350; //要素より、350px上の
     var scroll = $(window).scrollTop();
     var windowHeight = $(window).height();
     if (scroll >= elemPos - windowHeight){
@@ -73,18 +75,15 @@ function fadeAnime(){
     $('.fox').addClass('march3');
     $('.deer').addClass('march4');
     
-    // 画面内に入ったらfadeInというクラス名を追記
+    // 画面内に入ったらmarchというクラス名を追記
     }else{
       $(this).removeClass('march');
       $('.rabbit').removeClass('march2');
       $('.fox').removeClass('march3');
       $('.deer').removeClass('march4');
-    // 画面外に出たらfadeInというクラス名を外す
+    // 画面外に出たらmarchというクラス名を外す
     }
   });
-
-
-
 }//ここまでふわっと動くきっかけのクラス名と動きのクラス名の設定
 
 // 画面をスクロールをしたら動かしたい場合の記述
@@ -97,22 +96,3 @@ $(window).scroll(function (){
 //   fadeAnime();/* アニメーション用の関数を呼ぶ*/
 // });// ここまで画面が読み込まれたらすぐに動かしたい場合の記述
 
-
-
-
-$(function(){
-  // hoverした時
-    $('area').mouseover(function(){
-      $('.hover-area').toggleClass('hover');
-      let targetNum = $(this).data('option');
-      let target = $('.icon-'+targetNum);
-      target.addClass('active');
-    })
-  // hover外れた時
-    $('area').mouseout(function(){
-      $('.hover-area').toggleClass('hover');
-      let targetNum = $(this).data('option');
-      let target = $('.icon-'+targetNum);
-      target.removeClass('active');
-    })
-  })

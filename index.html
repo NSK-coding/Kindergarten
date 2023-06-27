@@ -16,18 +16,19 @@
   </head>
   <body>
     <header>
-      <div class="header-box">
+      <div class="header-PCmenu">
         <nav>
           <ul class="header-menu menu-position">
-            <li class="flex1 menu1">
+            <li class="menu__encho">
               <a href="#anc-encho">
                 <svg
                   viewBox="0 0 138 127"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
-                  class="path-1"
+                  class="menu__encho-path"
                 >
                   <defs>
+                    <!-- jQueryから型式+番号で制御するために残す -->
                     <style>
                       .menu-1 {
                         fill: transparent;
@@ -41,37 +42,37 @@
                 </svg>
                 <img
                   src="img/icon-encho.svg"
-                  alt=""
-                  class="header-menu_encho icon-01"
+                  alt="園長からの挨拶"
+                  class="menu__encho-icon"
                 />
                 <img
                   src="img/icon-encho_hover.svg"
-                  alt=""
-                  class="hover-icon hover-01"
+                  alt="園長からの挨拶：ホバー"
+                  class="menu__encho-icon-hovered hover-01"
                 />
               </a>
             </li>
-            <li class="flex2 menu2">
+            <li class="menu__nyuen">
               <a href="#anc-nyuen">
                 <img
                   src="img/icon-nyuen.svg"
-                  alt=""
-                  class="header-menu_nyuen icon-02"
+                  alt="入園説明会"
+                  class="menu__nyuen-icon icon-02"
                 />
               </a>
             </li>
-            <li class="flex3 menu3">
+            <li class="menu__logo">
               <h1 class="site-title">
-                <img src="img/logo.svg" alt="" class="header-menu_logo" />
+                <img src="img/logo.svg" alt="わくわくこども園" class="menu__logo-img" />
               </h1>
             </li>
-            <li class="flex4 menu4">
+            <li class="menu__access">
               <a href="#anc-access">
                 <svg
                   viewBox="0 0 133 137"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
-                  class="path-4"
+                  class="menu__access-path"
                 >
                   <defs>
                     <style>
@@ -87,21 +88,21 @@
                 </svg>
                 <img
                   src="img/icon-access.svg"
-                  alt=""
-                  class="header-menu_access icon-04"
+                  alt="アクセス"
+                  class="menu__access-icon icon-04"
                 />
                 <img
                   src="img/icon-access_hover.svg"
-                  alt=""
-                  class="hover-icon hover-04"
+                  alt="アクセス：ホバー"
+                  class="menu__access-icon-hovered hover-04"
                 />
               </a>
             </li>
-            <li class="flex5 menu5">
+            <li class="menu__inq">
               <img
                 src="img/icon-inq.svg"
-                alt=""
-                class="header-menu_inq icon-05"
+                alt="お問い合わせ"
+                class="menu__inq-icon icon-05"
               />
             </li>
           </ul>
@@ -111,10 +112,10 @@
         <picture>
           <source media="(max-width: 375px)" srcset="img/header-sp.svg" />
           <source media="(max-width: 769px)" srcset="img/header-tb.svg" />
-          <img src="img/header.svg" alt="" />
+          <source media="(min-height: 877px) and (min-aspect-ratio: 2/1)" srcset="img/header-ar.svg" />
+          <img src="img/header.svg" alt="ヘッダー背景画像" />
         </picture>
       </div>
-
       <div class="header-spmenu">
         <div class="openbtn">
           <img src="img/menu.svg" alt="" /><span></span><span></span
@@ -124,26 +125,43 @@
           <ul class="spmenu-flexbox">
             <li class="spmenu-box">
               <a href="#anc-encho" class="spmenu-encho"
-                ><img src="img/icon-encho.png" alt=""
+                ><img src="img/icon-encho.png" alt="園長からの挨拶"
               /></a>
             </li>
             <li class="spmenu-box">
               <a href="#anc-nyuen" class="spmenu-nyuen"
-                ><img src="img/icon-nyuen2.png" alt="" />
+                ><img src="img/icon-nyuen2.png" alt="入園説明会" />
               </a>
             </li>
             <li class="spmenu-box spmenu-box_b">
               <a href="#anc-access" class="spmenu-access"
-                ><img src="img/icon-access.png" alt=""
+                ><img src="img/icon-access.png" alt="アクセス"
               /></a>
             </li>
             <li class="spmenu-box spmenu-box_b">
               <a href="#" class="spmenu-inq"
-                ><img src="img/icon-inq2.png" alt=""
+                ><img src="img/icon-inq2.png" alt="お問い合わせ"
               /></a>
             </li>
           </ul>
         </nav>
+      </div>
+      <div class="ar-footer">
+        <div class="ar-footer-desc">
+          <img src="img/logo.svg" alt="" class="footer-logo" />
+          <div class="footer-address_ar">
+            <p class="footer-address">〒157-1234</p>
+            <p>東京都世田谷区1丁目23−4</p>
+            <p>TEL 03-0123-4567</p>
+            <p>FAX 03-0123-5678</p>
+            <p>E-mail:</p>
+            <p>info.wakuwaku-kodomoen.jp</p>
+          </div>
+        <div class="ar-footer-img">
+          <picture>
+            <img src="img/footer-ar.svg" alt="" />
+          </picture>
+        </div>
       </div>
     </header>
     <main>
@@ -163,9 +181,6 @@
             </clipPath>
           </svg>
           <div class="mainvisual">
-            <!-- <svg width="100%" height="100%" viewBox="0 0 100% 100%">
-              <image xlink:href="img/22304802_s 2 (1).jpg" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" clip-path="url(#cpath1)"/>
-            </svg> -->
             <picture>
               <source
                 media="(max-width: 375px)"
@@ -177,7 +192,7 @@
               />
               <img
                 src="img/22304802_s_2_pc.jpg"
-                alt=""
+                alt="すべり台とこども"
                 class="slide-img slide-img1"
               />
             </picture>
@@ -192,7 +207,7 @@
               />
               <img
                 src="img/26903665_s_1_pc.jpg"
-                alt=""
+                alt="３人のこども"
                 class="slide-img slide-img2"
               />
             </picture>
@@ -207,7 +222,7 @@
               />
               <img
                 src="img/22304856_s_1_pc.jpg"
-                alt=""
+                alt="泣いている男の子"
                 class="slide-img slide-img3"
               />
             </picture>
@@ -275,13 +290,16 @@
               <p class="encho-sign">わくわくこども園 山田</p>
             </div>
             <div class="encho-vec rotate">
-              <!-- <img src="img/Vector-encho.svg" alt=""> -->
-              <!-- <img src="img/dアートボード 1.svg" alt="" class="enve"> -->
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 238 220">
                 <defs>
                   <clipPath id="clip0_22_24">
-                    <rect width="31" height="41" fill="white" transform="translate(30.9695 42.7399) rotate(-177.172)"/>
-                    </clipPath>
+                    <rect
+                      width="31"
+                      height="41"
+                      fill="white"
+                      transform="translate(30.9695 42.7399) rotate(-177.172)"
+                    />
+                  </clipPath>
                   <style>
                     .path-encho {
                       fill: #e9654b;
@@ -297,34 +315,82 @@
                   </style>
                 </defs>
 
-                <g clip-path="url(#clip0_22_24)" class="owl" >
-                  <path d="M1.36132 13.8034C1.59302 9.11345 3.59017 5.40087 5.62102 5.50121C7.65186 5.60154 6.68467 9.365 6.45297 14.0549C6.22127 18.7448 7.29786 22.6093 5.26702 22.5089C3.23618 22.4086 1.13123 18.4934 1.36293 13.8034L1.36132 13.8034Z" fill="#DF4942"/>
-                  <path d="M32.3235 15.333C32.5552 10.6431 30.9337 6.75174 28.9028 6.65141C26.872 6.55108 27.4635 10.3915 27.2318 15.0815C27.0001 19.7714 25.5479 23.5109 27.5787 23.6112C29.6095 23.7115 32.0918 20.0229 32.3235 15.333Z" fill="#DF4942"/>
-                  <path d="M14.7166 0.88692L20.6943 1.18224C26.36 1.46215 30.7225 6.33478 30.4395 12.0631L30.3047 14.7907C29.9392 22.1902 23.712 27.8953 16.3955 27.5338C9.07894 27.1724 3.44444 20.8813 3.81001 13.4817L3.94477 10.7541C4.22785 5.02419 9.05093 0.607012 14.715 0.88684L14.7166 0.88692Z" fill="#2EAC94"/>
-                  <path d="M16.6875 17.721C9.28007 17.355 3.00694 22.4878 2.67605 29.1854C2.34516 35.883 8.08181 41.6091 15.4892 41.9751C22.8966 42.3411 29.1697 37.2083 29.5006 30.5107C29.8315 23.8131 24.0949 18.087 16.6875 17.721Z" fill="#2EAC94"/>
-                  <path d="M17.2888 5.54979C12.1862 5.2977 7.81328 9.87926 7.52161 15.783C7.22994 21.6867 11.1299 26.677 16.2325 26.9291C21.3351 27.1812 25.708 22.5996 25.9997 16.6959C26.2913 10.7922 22.3913 5.80188 17.2888 5.54979Z" fill="#E6E1C8"/>
-                  <path d="M10.4792 38.1672C12.5003 38.267 14.3736 37.4891 15.7753 36.1503C17.0382 37.6208 18.8257 38.5795 20.8468 38.6794C24.9198 38.8806 28.3955 35.523 28.6102 31.1781C28.8248 26.8333 25.697 23.1494 21.624 22.9482C19.6029 22.8484 17.7296 23.6262 16.3279 24.9651C15.065 23.4946 13.2775 22.5359 11.2564 22.436C7.18338 22.2348 3.7077 25.5924 3.49305 29.9372C3.27839 34.2821 6.40619 37.9659 10.4792 38.1672Z" fill="#E6E1C8"/>
-                  <path d="M10.5809 36.11C13.0063 36.2298 15.1433 34.6404 15.9637 32.3385C16.5532 34.7101 18.5232 36.5024 20.9485 36.6222C23.956 36.7708 26.5227 34.2912 26.6812 31.0828C26.8398 27.8744 24.5299 25.1539 21.5225 25.0053C19.0971 24.8855 16.9601 26.4749 16.1397 28.7769C15.5501 26.4053 13.5802 24.613 11.1548 24.4931C8.14736 24.3446 5.5806 26.8241 5.42209 30.0325C5.26359 33.2409 7.57344 35.9614 10.5809 36.11Z" fill="#DF4942"/>
-                  <path d="M11.9814 27.4469C10.4196 27.3698 9.08922 28.6067 9.01003 30.2098C8.93083 31.8128 10.1328 33.1749 11.6946 33.2521C13.2565 33.3292 14.5868 32.0923 14.666 30.4892C14.7452 28.8862 13.5433 27.5241 11.9814 27.4469Z" fill="#E6E1C8"/>
-                  <path d="M20.4104 27.8634C18.8485 27.7862 17.5182 29.0232 17.439 30.6262C17.3598 32.2293 18.5617 33.5914 20.1236 33.6685C21.6854 33.7457 23.0157 32.5087 23.0949 30.9056C23.1741 29.3026 21.9722 27.9405 20.4104 27.8634Z" fill="#E6E1C8"/>
-                  <path d="M12.6601 28.9968C11.901 28.9593 11.2549 29.5512 11.217 30.3188C11.1791 31.0865 11.7637 31.7392 12.5227 31.7767C13.2818 31.8142 13.9278 31.2223 13.9658 30.4546C14.0037 29.687 13.4191 29.0343 12.6601 28.9968Z" fill="#38372F"/>
-                  <path d="M19.5838 29.3388C18.8247 29.3013 18.1786 29.8932 18.1407 30.6609C18.1028 31.4285 18.6874 32.0812 19.4464 32.1187C20.2055 32.1562 20.8515 31.5643 20.8895 30.7967C20.9274 30.029 20.3428 29.3763 19.5838 29.3388Z" fill="#38372F"/>
-                  <path d="M14.0098 26.0866L16.4005 23.5278L18.5274 26.3098L16.1367 28.8685L14.0098 26.0866Z" fill="#38372F"/>
-                  <path d="M16.7272 16.9165L17.9879 20.1048L15.1583 19.965L16.7272 16.9165Z" fill="#2EAC94"/>
-                  <path d="M12.5911 16.7121L13.8518 19.9005L11.0222 19.7607L12.5911 16.7121Z" fill="#2EAC94"/>
-                  <path d="M14.8076 12.2022L16.0699 15.3906L13.2387 15.2508L14.8076 12.2022Z" fill="#2EAC94"/>
-                  <path d="M19.1005 12.4143L17.5316 15.4628L20.3612 15.6026L19.1005 12.4143Z" fill="#2EAC94"/>
-                  <path d="M20.8616 17.1207L19.2927 20.1693L22.1223 20.3091L20.8616 17.1207Z" fill="#2EAC94"/>
-                  </g>
+                <g clip-path="url(#clip0_22_24)" class="owl">
                   <path
+                    d="M1.36132 13.8034C1.59302 9.11345 3.59017 5.40087 5.62102 5.50121C7.65186 5.60154 6.68467 9.365 6.45297 14.0549C6.22127 18.7448 7.29786 22.6093 5.26702 22.5089C3.23618 22.4086 1.13123 18.4934 1.36293 13.8034L1.36132 13.8034Z"
+                    fill="#DF4942"
+                  />
+                  <path
+                    d="M32.3235 15.333C32.5552 10.6431 30.9337 6.75174 28.9028 6.65141C26.872 6.55108 27.4635 10.3915 27.2318 15.0815C27.0001 19.7714 25.5479 23.5109 27.5787 23.6112C29.6095 23.7115 32.0918 20.0229 32.3235 15.333Z"
+                    fill="#DF4942"
+                  />
+                  <path
+                    d="M14.7166 0.88692L20.6943 1.18224C26.36 1.46215 30.7225 6.33478 30.4395 12.0631L30.3047 14.7907C29.9392 22.1902 23.712 27.8953 16.3955 27.5338C9.07894 27.1724 3.44444 20.8813 3.81001 13.4817L3.94477 10.7541C4.22785 5.02419 9.05093 0.607012 14.715 0.88684L14.7166 0.88692Z"
+                    fill="#2EAC94"
+                  />
+                  <path
+                    d="M16.6875 17.721C9.28007 17.355 3.00694 22.4878 2.67605 29.1854C2.34516 35.883 8.08181 41.6091 15.4892 41.9751C22.8966 42.3411 29.1697 37.2083 29.5006 30.5107C29.8315 23.8131 24.0949 18.087 16.6875 17.721Z"
+                    fill="#2EAC94"
+                  />
+                  <path
+                    d="M17.2888 5.54979C12.1862 5.2977 7.81328 9.87926 7.52161 15.783C7.22994 21.6867 11.1299 26.677 16.2325 26.9291C21.3351 27.1812 25.708 22.5996 25.9997 16.6959C26.2913 10.7922 22.3913 5.80188 17.2888 5.54979Z"
+                    fill="#E6E1C8"
+                  />
+                  <path
+                    d="M10.4792 38.1672C12.5003 38.267 14.3736 37.4891 15.7753 36.1503C17.0382 37.6208 18.8257 38.5795 20.8468 38.6794C24.9198 38.8806 28.3955 35.523 28.6102 31.1781C28.8248 26.8333 25.697 23.1494 21.624 22.9482C19.6029 22.8484 17.7296 23.6262 16.3279 24.9651C15.065 23.4946 13.2775 22.5359 11.2564 22.436C7.18338 22.2348 3.7077 25.5924 3.49305 29.9372C3.27839 34.2821 6.40619 37.9659 10.4792 38.1672Z"
+                    fill="#E6E1C8"
+                  />
+                  <path
+                    d="M10.5809 36.11C13.0063 36.2298 15.1433 34.6404 15.9637 32.3385C16.5532 34.7101 18.5232 36.5024 20.9485 36.6222C23.956 36.7708 26.5227 34.2912 26.6812 31.0828C26.8398 27.8744 24.5299 25.1539 21.5225 25.0053C19.0971 24.8855 16.9601 26.4749 16.1397 28.7769C15.5501 26.4053 13.5802 24.613 11.1548 24.4931C8.14736 24.3446 5.5806 26.8241 5.42209 30.0325C5.26359 33.2409 7.57344 35.9614 10.5809 36.11Z"
+                    fill="#DF4942"
+                  />
+                  <path
+                    d="M11.9814 27.4469C10.4196 27.3698 9.08922 28.6067 9.01003 30.2098C8.93083 31.8128 10.1328 33.1749 11.6946 33.2521C13.2565 33.3292 14.5868 32.0923 14.666 30.4892C14.7452 28.8862 13.5433 27.5241 11.9814 27.4469Z"
+                    fill="#E6E1C8"
+                  />
+                  <path
+                    d="M20.4104 27.8634C18.8485 27.7862 17.5182 29.0232 17.439 30.6262C17.3598 32.2293 18.5617 33.5914 20.1236 33.6685C21.6854 33.7457 23.0157 32.5087 23.0949 30.9056C23.1741 29.3026 21.9722 27.9405 20.4104 27.8634Z"
+                    fill="#E6E1C8"
+                  />
+                  <path
+                    d="M12.6601 28.9968C11.901 28.9593 11.2549 29.5512 11.217 30.3188C11.1791 31.0865 11.7637 31.7392 12.5227 31.7767C13.2818 31.8142 13.9278 31.2223 13.9658 30.4546C14.0037 29.687 13.4191 29.0343 12.6601 28.9968Z"
+                    fill="#38372F"
+                  />
+                  <path
+                    d="M19.5838 29.3388C18.8247 29.3013 18.1786 29.8932 18.1407 30.6609C18.1028 31.4285 18.6874 32.0812 19.4464 32.1187C20.2055 32.1562 20.8515 31.5643 20.8895 30.7967C20.9274 30.029 20.3428 29.3763 19.5838 29.3388Z"
+                    fill="#38372F"
+                  />
+                  <path
+                    d="M14.0098 26.0866L16.4005 23.5278L18.5274 26.3098L16.1367 28.8685L14.0098 26.0866Z"
+                    fill="#38372F"
+                  />
+                  <path
+                    d="M16.7272 16.9165L17.9879 20.1048L15.1583 19.965L16.7272 16.9165Z"
+                    fill="#2EAC94"
+                  />
+                  <path
+                    d="M12.5911 16.7121L13.8518 19.9005L11.0222 19.7607L12.5911 16.7121Z"
+                    fill="#2EAC94"
+                  />
+                  <path
+                    d="M14.8076 12.2022L16.0699 15.3906L13.2387 15.2508L14.8076 12.2022Z"
+                    fill="#2EAC94"
+                  />
+                  <path
+                    d="M19.1005 12.4143L17.5316 15.4628L20.3612 15.6026L19.1005 12.4143Z"
+                    fill="#2EAC94"
+                  />
+                  <path
+                    d="M20.8616 17.1207L19.2927 20.1693L22.1223 20.3091L20.8616 17.1207Z"
+                    fill="#2EAC94"
+                  />
+                </g>
+                <path
                   class="path-encho"
                   d="m28.04,138.12C-8.95,93.09-14.95,97,44.51,28.18,53.09,18.25,86.35,7.17,108.72.35c24.57-4.62,70.07,37.77,104.41,55.53,34.34,17.76,19.12,45.74,24.43,90.22,5.3,44.48-37.69,39.72-87.24,66.86-49.55,27.14-85.29-29.79-122.27-74.83Z"
                 />
               </svg>
             </div>
-            <!-- <div class="encho-photo">
-              <img src="img/enchou.jpg" alt="" />
-            </div> -->
           </div>
         </section>
         <section id="nyuen" class="wrapper fadeUpTrigger">
@@ -384,21 +450,22 @@
                 <defs>
                   <style>
                     .path-nyuen {
-                      fill: #00ADA9;
+                      fill: #00ada9;
                       transition: 0.5s;
                     }
                     .path-nyuen:hover {
-opacity: 0;
+                      opacity: 0;
                     }
                   </style>
                 </defs>
-<path class="path-nyuen" d="M189.091 153.587C178.883 172.547 138.973 215.211 107.923 198.892C82.2813 185.416 48.3563 184.212 32.2209 173.843C16.0855 163.473 4.12833 144.931 0.849279 125.979C-3.25736 102.244 8.49497 57.7647 21.5212 24.5224C34.5475 -8.71986 82.5877 20.0337 128.717 3.10997C165.996 -7.56296 209.57 11.9118 211.315 48.479C212.468 72.6605 215.234 78.2414 225.486 98.9317C235.738 119.622 199.299 134.626 189.091 153.587Z" />
-</svg>
-              <!-- <img src="img/Vector-nyuen.svg" alt="" /> -->
-
+                <path
+                  class="path-nyuen"
+                  d="M189.091 153.587C178.883 172.547 138.973 215.211 107.923 198.892C82.2813 185.416 48.3563 184.212 32.2209 173.843C16.0855 163.473 4.12833 144.931 0.849279 125.979C-3.25736 102.244 8.49497 57.7647 21.5212 24.5224C34.5475 -8.71986 82.5877 20.0337 128.717 3.10997C165.996 -7.56296 209.57 11.9118 211.315 48.479C212.468 72.6605 215.234 78.2414 225.486 98.9317C235.738 119.622 199.299 134.626 189.091 153.587Z"
+                />
+              </svg>
             </div>
             <div class="nyuen-wolf">
-              <img src="img/wolf.svg" alt="">
+              <img src="img/wolf.svg" alt="" />
             </div>
             <div class="nyuen-tree">
               <img src="img/tree.svg" alt="" />
@@ -447,12 +514,12 @@ opacity: 0;
                 <div class="access-button button">
                   <a
                     href="https://goo.gl/maps/xWK2w2nJoqtWWnm18"
-                    target="_blank" class="button-anime"
+                    target="_blank"
+                    class="button-anime"
                     ><span>google mapで見る</span></a
                   >
                 </div>
               </div>
-
               <div class="access-grid_3">
                 <p class="access-station">〇〇駅2番出口より徒歩10分</p>
                 <p>市営バス[59]〇〇駅前から徒歩7分</p>
@@ -470,7 +537,7 @@ opacity: 0;
                 <defs>
                   <style>
                     .path-access {
-                      fill: #1C6EB8;
+                      fill: #1c6eb8;
                       transition: 0.5s;
                     }
                     .path-access:hover {
@@ -479,23 +546,31 @@ opacity: 0;
                     }
                   </style>
                 </defs>
-<path class="path-access" d="M208.762 49.6141C258.317 80.6745 262.836 75.0564 227.481 159.216C222.379 171.361 194.009 192.403 174.723 205.964C152.644 218.121 95.7679 192.278 57.3101 186.277C18.8522 180.276 24.6461 148.899 5.61122 108.343C-13.4237 67.7874 29.2409 58.6986 68.1826 17.2527C107.124 -24.1933 159.207 18.5537 208.762 49.6141Z" />
-</svg>
-              <!-- <img src="img/Vector-access2.svg" alt="" /> -->
+                <path
+                  class="path-access"
+                  d="M208.762 49.6141C258.317 80.6745 262.836 75.0564 227.481 159.216C222.379 171.361 194.009 192.403 174.723 205.964C152.644 218.121 95.7679 192.278 57.3101 186.277C18.8522 180.276 24.6461 148.899 5.61122 108.343C-13.4237 67.7874 29.2409 58.6986 68.1826 17.2527C107.124 -24.1933 159.207 18.5537 208.762 49.6141Z"
+                />
+              </svg>
             </div>
+          </div>
+          <div class="ar-container">
+            <div class="squirrel marchTrigger">
+              <img src="img/squirrel.svg" alt="" />
+            </div>
+            <div class="rabbit"><img src="img/rabbit.svg" alt="" /></div>
+            <div class="fox"><img src="img/fox.svg" alt="" /></div>
+            <div class="deer"><img src="img/deer.svg" alt="" /></div>
           </div>
         </section>
       </div>
-
       <div class="container">
-        <div class="squirrel marchTrigger"><img src="img/squirrel.svg" alt=""></div>
-        <div class="rabbit"><img src="img/rabbit.svg" alt=""></div>
-        <div class="fox"><img src="img/fox.svg" alt=""></div>
-        <div class="deer"><img src="img/deer.svg" alt=""></div>
+        <div class="squirrel marchTrigger">
+          <img src="img/squirrel.svg" alt="" />
+        </div>
+        <div class="rabbit"><img src="img/rabbit.svg" alt="" /></div>
+        <div class="fox"><img src="img/fox.svg" alt="" /></div>
+        <div class="deer"><img src="img/deer.svg" alt="" /></div>
       </div>
-      
-
-      
       <footer>
         <div class="footer-desc">
           <img src="img/logo.svg" alt="" class="footer-logo" />
@@ -521,10 +596,12 @@ opacity: 0;
         </div>
       </footer>
     </main>
+    <!-- ClipPathをレスポンシブにリサイズするためのツール -->
     <script src="//cdnjs.cloudflare.com/ajax/libs/image-map-resizer/1.0.10/js/imageMapResizer.min.js"></script>
     <script>
       imageMapResize();
     </script>
+    <!-- jQuery -->
     <script
       src="https://code.jquery.com/jquery-3.4.1.min.js"
       integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="

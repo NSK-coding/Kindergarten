@@ -114,7 +114,7 @@ a.anchor {
 }
 
 .rotate {
-  animation: rotate-z 2s infinite;
+  animation: rotate-z 4s infinite;
   -webkit-animation: rotate-z 4s infinite;
 }
 .rotate:hover {
@@ -126,14 +126,6 @@ a.anchor {
   }
   100% {
     transform: rotateZ(360deg);
-  }
-}
-@keyframes rotate-x {
-  0% {
-    -webkit-transform: rotateZ(0deg);
-  }
-  100% {
-    -webkit-transform: rotateZ(360deg);
   }
 }
 
@@ -263,7 +255,8 @@ header {
   display: block;
 }
 .hovered {
-  scale: 1.1;
+  /* scale: 1.1; */
+  transform: scale(1.1);
 }
 
 /* MAINVISUAL  */
@@ -870,9 +863,6 @@ Common
   .firstview-message {
     font-size: 5.6rem;
   }
-  .header-backimg {
-    /* top: calc(0.14 * (1366px - 100vw)); */
-  }
   .footer-img {
     bottom: calc(0.14 * (1366px - 100vw));
   }
@@ -1028,9 +1018,6 @@ Tablet
   .nyuen-schedule {
     margin: 153px auto 0;
     margin-top: calc(153px + (769px - 100vw) * 0.15);
-  }
-  .nyuen-schedule_fig {
-    scale: 1.04;
   }
   .nyuen-time_flex {
     flex-direction: column;
@@ -1243,7 +1230,8 @@ SP
     padding-top: 33%;
   }
   .nyuen-schedule_fig {
-    scale: 0.75;
+    /* scale: 0.75; */
+    transform: scale(0.75);
   }
   .nyuen-time_flex {
     margin-top: -20px;
